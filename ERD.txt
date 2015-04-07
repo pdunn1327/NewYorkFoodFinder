@@ -1,0 +1,5 @@
+In the ERD at workspace/ERD.png you'll find the Database schema that I used. The goal was to prepare the database for further usage, such as reporting the address of a restaurant that was found, or being able to visualize the count of restaurants per cuisine. I reduced the amount of data to enter into the database for memory concerns and because it didn't seem important at first glance to know all of the different types of inspections that were being run.
+
+The main thrust of the design is that Cuisines stands at the top of the hierarchy. There will be many Restaurants belonging to the same Cuisine. Once we know that, we also can recognize that there will be many Inspections for which we will want to know the Grade associated with that Inspection. We can keep the Grade values stored in the DB for the purposes of data integrity and "Help The Next Engineer". In addition, we know that each Restaurant will have many Inspections.
+
+When we report the restaurants we make a decision to order them by the date of the grading, perhaps subtly prompting the user to go to a more recently inspected restaurant as it is more likely to still have that grade-quality.
